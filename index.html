@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  type="module" src="main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Segurança de Dados</title>
+</head>
+<body>
+    <form class="form contact-form" >
+        <h1>Formulário</h1>
+        <div>
+          <label class="form-label" for="name">Nome</label>
+          <input class="form-control" id="username" name="name" type="text" required />
+        </div>
+        <div>
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" id="email" name="email" type="email" required />
+        </div>
+        <div>
+            <label class="form-label" for="phone">Telefone</label>
+            <input class="form-control" id="phone" name="phone" type="number" required />
+          </div>
+        <!-- <div> -->
+          <!-- <label class="form-label" for="subject">Subject</label> -->
+          <!-- <select class="form-control" id="subject" name="subject" required>
+            <option value="" selected disabled></option>
+            <optgroup label="Option Group">
+              <option value="subject-one">Subject One</option>
+              <option value="subject-two">Subject Two</option>
+              <option value="subject-three">Subject Three</option>
+            </optgroup>
+            <option value="subject-four">Subject Four</option>
+            <option value="subject-five">Subject Five</option>
+            <option value="subject-six">Subject Six</option>
+          </select> -->
+        <!-- </div> -->
+        <div>
+          <label class="form-label" for="message">Mensagem</label>
+          <textarea class="form-control" id="message" name="message" required></textarea>
+        </div>
+       
+        <div>
+          <button class="button submit" type="button">Submit</button>
+          <button class="button" type="reset">Clear</button>
+        </div>
+      </form>
+</body>
+</html>
