@@ -8,38 +8,35 @@
     <title>Segurança de Dados</title>
 </head>
 <body>
+  <div class="wrapper">
+    <!-- START cookies part -->
+    <i class="bx bx-cookie"></i>
+    <h2>Esse site usa cookies</h2>
+
+    <div class="data">
+      <p>Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços você concorda com tal monitoramento <a href="#"> Ler mais...</a></p>
+    </div>
+    <div class="buttons">
+      <button class="button" id="acceptBtn">Aceitar</button>
+      <button class="button" id="declineBtn">Recusars</button>
+    </div>
+    <!-- END cookies part -->
+  </div>
     <form class="form contact-form" >
         <h1>Formulário</h1>
-        <div>
-          <label class="form-label" for="name">Nome</label>
+        <div class="container">
+          <label class="form-label" for="username">Nome</label>
           <input class="form-control" id="username" name="name" type="text" required />
         </div>
-        <div>
+        <div class="container">
           <label class="form-label" for="email">Email</label>
           <input class="form-control" id="email" name="email" type="email" required />
         </div>
-        <div>
+        <div class="container">
             <label class="form-label" for="phone">Telefone</label>
             <input class="form-control" id="phone" name="phone" type="number" required />
           </div>
-        <!-- <div> -->
-          <!-- <label class="form-label" for="subject">Subject</label> -->
-          <!-- <select class="form-control" id="subject" name="subject" required>
-            <option value="" selected disabled></option>
-            <optgroup label="Option Group">
-              <option value="subject-one">Subject One</option>
-              <option value="subject-two">Subject Two</option>
-              <option value="subject-three">Subject Three</option>
-            </optgroup>
-            <option value="subject-four">Subject Four</option>
-            <option value="subject-five">Subject Five</option>
-            <option value="subject-six">Subject Six</option>
-          </select> -->
-        <!-- </div> -->
-        <div>
-          <label class="form-label" for="message">Mensagem</label>
-          <textarea class="form-control" id="message" name="message" required></textarea>
-        </div>
+      
        
         <div>
           <button class="button submit" type="button">Submit</button>

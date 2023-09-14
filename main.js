@@ -44,7 +44,12 @@ let username = document.querySelector("#username")
 let email = document.querySelector("#email")
 let phone = document.querySelector("#phone")
 
-
+// definindo as regex
+const regularExpressions = {
+    email: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    phone: /^(\+\d{2}-|\+\d{2})?\d{11}$/,
+    username: /^[a-z]+(\s[a-z]+){1,10}$/i
+}
 
 const submitForm = async () => {
     try {
@@ -58,4 +63,41 @@ const submitForm = async () => {
     } catch(e) {console.error("Erro adicionando documento: ", e)}
 }
 
-submit.onclick = () => {submitForm()}
+const validateForm = () => {
+    const result = [regularExpressions.username.test(username.value), regularExpressions.phone.test(phone.value), regularExpressions.email.test(email.value)]
+    if(result[0] && result[1] && result[2]) return true
+    else return result
+}
+
+submit.onclick = () => {
+    console.log(validateForm())
+
+    if (validateForm()) submitForm()
+}
+
+
+// cookies part
+
+const cookieBox = document.querySelector(".wrapper"),
+  buttons = document.querySelectorAll(".button");
+
+const executeCodes = () => {
+  //if cookie contains codinglab it will be returned and below of this code will not run
+  if (document.cookie.includes("codinglab")) return;
+  cookieBox.classList.add("show");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      cookieBox.classList.remove("show");
+
+      //if button has acceptBtn id
+      if (button.id == "acceptBtn") {
+        //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
+        document.cookie = "cookieBy= codinglab; max-age=" + 60 * 60 * 24 * 30;
+      }
+    });
+  });
+};
+
+//executeCodes function will be called on webpage load
+window.addEventListener("load", executeCodes);
