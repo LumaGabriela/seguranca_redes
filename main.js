@@ -2,18 +2,10 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js'
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js'
 import { getFirestore, collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-lite.js'
-// import { async } from 'https://www.gstatic.com/firebasejs/10.3.1/@firebase-util.js'
 
 
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "/firebase/analytics";
-// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-// import { async } from "@firebase/util";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyCFc26xUk9kDpbzOvLv2EY8ixDJySyctFw",
   authDomain: "data-security-ac98c.firebaseapp.com",
@@ -76,14 +68,15 @@ submit.onclick = () => {
 }
 
 
-// cookies part
+// cookies section
 
+let getData = document.cookie;
 const cookieBox = document.querySelector(".wrapper"),
   buttons = document.querySelectorAll(".button");
 
 const executeCodes = () => {
   //if cookie contains codinglab it will be returned and below of this code will not run
-  if (document.cookie.includes("codinglab")) return;
+  if (document.cookie.includes("true")) return;
   cookieBox.classList.add("show");
 
   buttons.forEach((button) => {
@@ -93,7 +86,9 @@ const executeCodes = () => {
       //if button has acceptBtn id
       if (button.id == "acceptBtn") {
         //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
-        document.cookie = "cookieBy= codinglab; max-age=" + 60 * 60 * 24 * 30;
+        
+        document.cookie = "alow= true; canGetData=  true" ;
+        getData = document.cookie
       }
     });
   });
@@ -101,3 +96,5 @@ const executeCodes = () => {
 
 //executeCodes function will be called on webpage load
 window.addEventListener("load", executeCodes);
+
+console.log(getData)
